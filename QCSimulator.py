@@ -76,8 +76,16 @@ class QCSimulator:
 
 		result = random.choices(population=states, weights=probs, k=1)[0]  
 
-		return result, "|" + result + ">"
+		return "|" + result + ">"
 
+	def takeMultipleMeasurements(self, n):
+		statesCount = {}
+		for _ in range(0,n):
+			measurement = self.measure()
+			if measurement in statesCount: statesCount[measurement] += 1
+			else: statesCount[measurement] = 1
+
+		return statesCount
 
 H = [1/sqrt(2)+0j, 1/sqrt(2)+0j, 1/sqrt(2)+0j, -1/sqrt(2)+0j]
 X = [0j, 1+0j, 1+0j, 0j]
