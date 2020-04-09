@@ -76,7 +76,7 @@ class QCSimulator:
 
 		result = random.choices(population=states, weights=probs, k=1)[0]  
 
-		return "|" + result + ">"
+		return "|" + result[::-1] + ">"
 
 	def takeMultipleMeasurements(self, n):
 		statesCount = {}
