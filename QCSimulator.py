@@ -15,7 +15,7 @@ class QCSimulator:
 		self.stateVector = [0j] * (2**n)
 		self.stateVector[0] = 1+0j
 	
-	def applySingleGate(self, qID, gate):
+	def applyGate(self, qID, gate):
 		assert(len(gate) == 4)
 
 		for i in range(0, 2**(self.n-1)):

@@ -1,7 +1,7 @@
 from QCSimulator import *
 
 qcs = QCSimulator(3)
-qcs.applySingleGate(0, H)
+qcs.applyGate(0, H)
 qcs.applyControlledGate(0, 1, X)
 qcs.applyControlledGate(0, 2, X)
 
